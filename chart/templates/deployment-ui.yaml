@@ -79,7 +79,7 @@ metadata:
   namespace: {{ include "release_namespace" . }}
 spec:
   {{- if eq .Values.service.ui.type "Rancher-Proxy" }}
-  type: ClusterIP
+  type: NodePort
   {{- else }}
   type: {{ .Values.service.ui.type }}
   {{- end }}
